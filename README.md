@@ -1,4 +1,10 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Mind Grapes Connect
+
+
+## Description
+
+Presentation platform for multi-phase programs. Allowing for intake, review, and management of program resources.
+
 
 ## Available Scripts
 
