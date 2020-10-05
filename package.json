@@ -7,6 +7,17 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "@types/bcrypt": "^3.0.0",
+    "@types/body-parser": "^1.19.0",
+    "@types/cookie-session": "^2.0.41",
+    "@types/express": "^4.17.8",
+    "@types/jest": "^26.0.14",
+    "@types/node": "^14.11.2",
+    "@types/passport": "^1.0.4",
+    "@types/passport-local": "^1.0.33",
+    "@types/pg": "^7.14.5",
+    "@types/react": "^16.9.50",
+    "@types/react-dom": "^16.9.8",
     "axios": "^0.20.0",
     "bcryptjs": "^2.4.3",
     "cookie-session": "^1.4.0",
@@ -22,9 +33,13 @@
     "typescript": "^4.0.3"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "npm run tsc && node dist/server.js",
+    "client": "react-scripts start",
+    "server": "nodemon -e ts --ignore './dist' -x npm run server:ts",
+    "server:ts": "tsc -p tsconfig.node.json && node dist/server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "tsc": "tsc -p tsconfig.node.json",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
