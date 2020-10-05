@@ -1,0 +1,18 @@
+.footer {
+  padding: 20px;
+  position: relative;
+  color: #24292e;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.footer::before {
+  content: '';
+  width: 70%;
+  height: 0;
+  border-bottom: 2px solid #e1e4e8;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+}

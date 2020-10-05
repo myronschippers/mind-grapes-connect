@@ -2,8 +2,10 @@ import React from 'react';
 import styles from './GlobalLayout.module.css';
 
 function GlobalLayout(props) {
-  const HeaderContent = props.header ? props.header : () => <h1>Header</h1>;
-  const FooterContent = props.footer ? props.footer : () => <p>Footer</p>;
+  const HeaderContent =
+    props.header != null ? props.header : () => <h1>Header</h1>;
+  const FooterContent =
+    props.footer != null ? props.footer : () => <p>Footer</p>;
 
   return (
     <div className={styles.scaffold}>
