@@ -1,0 +1,18 @@
+/* ------------------------------------------------------------
+** SCAFFOLD for SITE LAYOUT
+** ------------------------------------------------------------ */
+
+.scaffold {
+  display: flex;
+  height: 100%; /* needed for IE10 */
+  min-height: 100%;
+  flex-direction: column;
+}
+
+.scaffold-hd {
+  flex: 0 0 auto;
+}
+
+.scaffold-bd {
+  flex: 1 0 auto;
+}
