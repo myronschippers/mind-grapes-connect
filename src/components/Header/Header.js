@@ -1,13 +1,18 @@
 import React from 'react';
 import styles from './Header.module.css';
 
+// CUSTOM COMPONENTS
+import MainNav from '../MainNav/MainNav';
+
 function Header(props) {
   return (
     <div className={styles.appBar}>
       <div>
         Mind <span>Grapes</span> Connect
       </div>
-      <div>Nav</div>
+      <div>
+        <MainNav />
+      </div>
     </div>
   );
 }
