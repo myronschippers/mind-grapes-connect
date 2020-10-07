@@ -1,6 +1,18 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+// MATERIAL-UI
+import {
+  Toolbar,
+  Typography,
+  Drawer,
+  List,
+  ListItem,
+  ListItemText,
+  IconButton,
+} from '@material-ui/core';
+import { Menu as MenuIcon } from '@material-ui/icons';
+
 // MODULES
 import navConfig from './nav.config';
 
@@ -34,18 +46,27 @@ function MainNav(props) {
 
   return (
     <nav style={navContainerStyles}>
-      <button onClick={clickToggleOpen}>
-        {isOpen === true ? 'Close' : 'Open'}
-      </button>
-      <ul style={navListStyles}>
-        {navConfig.map((pgConfig, pgIndex) => {
-          return (
-            <li key={pgIndex}>
-              <Link to={pgConfig.path}>{pgConfig.text}</Link>
-            </li>
-          );
-        })}
-      </ul>
+      <IconButton
+        onClick={clickToggleOpen}
+        edge="start"
+        color="inherit"
+        aria-label="menu"
+      >
+        <MenuIcon />
+      </IconButton>
+      <Drawer anchor="right" open={isOpen} onClose={clickToggleOpen}>
+        <List>
+          {navConfig.map((pgConfig, pgIndex) => {
+            return (
+              <ListItem key={pgIndex}>
+                <ListItemText>
+                  <Link to={pgConfig.path}>{pgConfig.text}</Link>
+                </ListItemText>
+              </ListItem>
+            );
+          })}
+        </List>
+      </Drawer>
     </nav>
   );
 }
