@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 
 // MATERIAL-UI
 import {
-  Toolbar,
-  Typography,
   Drawer,
   List,
   ListItem,
