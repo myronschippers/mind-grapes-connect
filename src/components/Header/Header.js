@@ -9,14 +9,16 @@ import MainNav from '../MainNav/MainNav';
 
 function Header(props) {
   return (
-    <div className={styles.appBar}>
-      <div>
-        Mind <span>Grapes</span> Connect
-      </div>
-      <div className={styles['appBar-nav']}>
-        <MainNav />
-      </div>
-    </div>
+    <AppBar>
+      <Toolbar>
+        <div>
+          Mind <span>Grapes</span> Connect
+        </div>
+        <div className={styles['appBar-nav']}>
+          <MainNav />
+        </div>
+      </Toolbar>
+    </AppBar>
   );
 }
 
