@@ -1,5 +1,6 @@
 import HomePg from '../../views/HomePg/HomePg';
 import AdminDashboardPg from '../../views/AdminDashboardPg/AdminDashboardPg';
+import LoginPg from '../../views/LoginPg/LoginPg';
 import ProfilePg from '../../views/ProfilePg/ProfilePg';
 import ProgramCreatePg from '../../views/ProgramCreatePg/ProgramCreatePg';
 import ProgramOverviewPg from '../../views/ProgramOverviewPg/ProgramOverviewPg';
@@ -62,6 +63,12 @@ const navConfig = [
     path: '/user/create',
     access: 0,
     component: UserCreatePg,
+  },
+  {
+    text: 'Login',
+    path: '/login',
+    access: 0,
+    component: LoginPg,
   },
 ];
 
