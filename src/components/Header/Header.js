@@ -9,7 +9,7 @@ import MainNav from '../MainNav/MainNav';
 
 function Header(props) {
   return (
-    <AppBar>
+    <AppBar position="static">
       <Toolbar>
         <div>
           Mind <span>Grapes</span> Connect
