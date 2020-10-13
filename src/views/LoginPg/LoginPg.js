@@ -5,6 +5,7 @@ import { Typography, Box, Paper } from '@material-ui/core';
 
 // CUSTOM COMPONENTS
 import LoginForm from '../../components/LoginForm/LoginForm';
+import PageWrapper from '../../components/PageWrapper/PageWrapper';
 
 // MATERIAL-UI CUSTOM STYLING
 import { makeStyles } from '@material-ui/core/styles';
@@ -37,16 +38,18 @@ function LoginPg(props) {
   const classes = useStyles();
 
   return (
-    <Box component="div" className={classes.root}>
-      <Paper>
-        <Box component="div" p={3}>
-          <Typography component="h2" variant="h4" className={classes.loginHd}>
-            Login
-          </Typography>
-          <LoginForm />
-        </Box>
-      </Paper>
-    </Box>
+    <PageWrapper>
+      <Box component="div" className={classes.root}>
+        <Paper>
+          <Box component="div" p={3}>
+            <Typography component="h2" variant="h4" className={classes.loginHd}>
+              Login
+            </Typography>
+            <LoginForm />
+          </Box>
+        </Paper>
+      </Box>
+    </PageWrapper>
   );
 }
 

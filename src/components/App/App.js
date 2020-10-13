@@ -13,7 +13,6 @@ function App() {
   return (
     <Router>
       <GlobalLayout header={Header} footer={Footer}>
-        Body Content Here
         {navConfig.map((pgConfig) => {
           return (
             <Route exact path={pgConfig.path} component={pgConfig.component} />
