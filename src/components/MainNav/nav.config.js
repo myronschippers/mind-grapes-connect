@@ -5,6 +5,7 @@ import ProfilePg from '../../views/ProfilePg/ProfilePg';
 import ProgramCreatePg from '../../views/ProgramCreatePg/ProgramCreatePg';
 import ProgramOverviewPg from '../../views/ProgramOverviewPg/ProgramOverviewPg';
 import ProgramsPg from '../../views/ProgramsPg/ProgramsPg';
+import RegisterPg from '../../views/RegisterPg/RegisterPg';
 import UserCreatePg from '../../views/UserCreatePg/UserCreatePg';
 import UserDetailPg from '../../views/UserDetailPg/UserDetailPg';
 import UsersPg from '../../views/UsersPg/UsersPg';
@@ -69,6 +70,12 @@ const navConfig = [
     path: '/login',
     access: 0,
     component: LoginPg,
+  },
+  {
+    text: 'Registration',
+    path: '/registration',
+    access: 0,
+    component: RegisterPg,
   },
 ];
 
