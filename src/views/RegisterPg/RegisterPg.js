@@ -7,7 +7,7 @@ import { Typography, Box, Paper } from '@material-ui/core';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import PgLayoutCenterBox from '../../components/PgLayoutCenterBox/PgLayoutCenterBox';
 
-function LoginPg(props) {
+function RegisterPg(props) {
   return (
     <PageWrapper>
       <PgLayoutCenterBox title="Registration">content</PgLayoutCenterBox>
@@ -15,4 +15,4 @@ function LoginPg(props) {
   );
 }
 
-export default LoginPg;
+export default RegisterPg;
