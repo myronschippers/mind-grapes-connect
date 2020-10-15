@@ -8,7 +8,7 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
   root: {
     boxSizing: 'border-box',
-    width: '400px',
+    width: '550px',
     maxWidth: '85%',
     margin: '0 auto',
   },

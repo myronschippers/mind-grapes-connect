@@ -1,7 +1,14 @@
 import React, { useState } from 'react';
 
 // MATERIAL-UI COMPONENTS
-import { Button, TextField, Collapse, IconButton } from '@material-ui/core';
+import {
+  Button,
+  TextField,
+  Collapse,
+  IconButton,
+  Grid,
+  Divider,
+} from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 import { Alert } from '@material-ui/lab';
 
@@ -67,22 +74,31 @@ function RegistrationForm(props) {
           {regError.message}
         </Alert>
       </Collapse>
-      <TextField
-        id="firstName"
-        type="text"
-        onChange={handleFieldChange('firstName')}
-        label="First Name"
-        variant="outlined"
-        required
-      />
-      <TextField
-        id="lastName"
-        type="text"
-        onChange={handleFieldChange('lastName')}
-        label="Last Name"
-        variant="outlined"
-        required
-      />
+      <Grid container spacing={2}>
+        <Grid item xs={6}>
+          <TextField
+            id="firstName"
+            type="text"
+            onChange={handleFieldChange('firstName')}
+            label="First Name"
+            variant="outlined"
+            required
+            fullWidth
+          />
+        </Grid>
+        <Grid item xs={6}>
+          <TextField
+            id="lastName"
+            type="text"
+            onChange={handleFieldChange('lastName')}
+            label="Last Name"
+            variant="outlined"
+            required
+            fullWidth
+          />
+        </Grid>
+      </Grid>
+
       <TextField
         id="phoneNumber"
         type="number"
@@ -99,6 +115,9 @@ function RegistrationForm(props) {
         variant="outlined"
         required
       />
+
+      <Divider />
+
       <TextField
         id="userPassword"
         type="password"
