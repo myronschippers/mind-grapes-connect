@@ -1,5 +1,6 @@
-import HomePg from '../../views/HomePg/HomePg';
 import AdminDashboardPg from '../../views/AdminDashboardPg/AdminDashboardPg';
+import ForgotPassPg from '../../views/ForgotPassPg/ForgotPassPg';
+import HomePg from '../../views/HomePg/HomePg';
 import LoginPg from '../../views/LoginPg/LoginPg';
 import ProfilePg from '../../views/ProfilePg/ProfilePg';
 import ProgramCreatePg from '../../views/ProgramCreatePg/ProgramCreatePg';
@@ -76,6 +77,12 @@ const navConfig = [
     path: '/registration',
     access: 0,
     component: RegisterPg,
+  },
+  {
+    text: 'Forgot Password',
+    path: '/forgot-password',
+    access: 0,
+    component: ForgotPassPg,
   },
 ];
 
