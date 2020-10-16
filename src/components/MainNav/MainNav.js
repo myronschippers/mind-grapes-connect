@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 // MATERIAL-UI
@@ -8,6 +9,7 @@ import {
   ListItem,
   ListItemText,
   IconButton,
+  Typography,
 } from '@material-ui/core';
 import { Menu as MenuIcon } from '@material-ui/icons';
 
@@ -16,8 +18,14 @@ import navConfig from './nav.config';
 
 function MainNav(props) {
   const [isOpen, setIsOpen] = useState(0);
+  const history = useHistory();
 
   const clickToggleOpen = function (event) {
+    setIsOpen(!isOpen);
+  };
+
+  const navToPath = (path) => (event) => {
+    history.push(path);
     setIsOpen(!isOpen);
   };
 
@@ -58,7 +66,9 @@ function MainNav(props) {
             return (
               <ListItem key={pgIndex}>
                 <ListItemText>
-                  <Link to={pgConfig.path}>{pgConfig.text}</Link>
+                  <Typography onClick={navToPath(pgConfig.path)}>
+                    {pgConfig.text}
+                  </Typography>
                 </ListItemText>
               </ListItem>
             );
