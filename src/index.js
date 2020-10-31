@@ -5,9 +5,9 @@ import App from './components/App/App';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  // kick off component
+  <App />,
+  // find existing element to insert react app
   document.getElementById('root')
 );
 
