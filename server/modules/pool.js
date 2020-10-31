@@ -10,7 +10,7 @@ const url = require('url');
 let config = {
   host: 'localhost', // Server hosting the postgres database
   port: 5432, // env var: PGPORT
-  database: '_auth-table-rewrite', // CHANGE THIS LINE! env var: PGDATABASE, this is likely the one thing you need to change to get up and running
+  database: '_mind-vineyard', // CHANGE THIS LINE! env var: PGDATABASE, this is likely the one thing you need to change to get up and running
   max: 10, // max number of clients in the pool
   idleTimeoutMillis: 30000, // how long a client is allowed to remain idle before being closed
 };
