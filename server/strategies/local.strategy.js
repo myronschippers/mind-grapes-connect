@@ -4,7 +4,7 @@ const encryptLib = require('../modules/encryption');
 const localStrategyCallback = async (email, password, done) => {
   try {
     const result = await pool.query(
-      `SELECT * FROM "user" 
+      `SELECT * FROM "user"
           JOIN "login" ON "login"."user_id"="user"."id"
           WHERE "user"."email" = $1;`,
       [email]

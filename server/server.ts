@@ -1,5 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import passport from './strategies/_root.strategy';
+import sessionMiddleware from './modules/session-middleware';
 
 require('dotenv').config();
 
@@ -13,6 +15,12 @@ const app: any = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+// setting cookie session storage
+app.use(sessionMiddleware);
+// start up passport sessions
+app.use(passport.initialize());
+app.use(passport.session());
 
 //
 // STATICS & ROUTES
