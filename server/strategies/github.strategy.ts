@@ -1,5 +1,5 @@
-const GitHubStrategy = require('passport-github2').Strategy;
-const pool = require('../modules/pool');
+import { Strategy as GitHubStrategy } from 'passport-github2';
+import pool from '../modules/pool';
 
 const githubStrategyCallback = async (
   accessToken,
@@ -64,7 +64,7 @@ const githubStrategyCallback = async (
   }
 };
 
-module.exports = (passport, callbackURL) => {
+const useGithubStrategy = (passport, callbackURL) => {
   passport.use(
     new GitHubStrategy(
       {
@@ -76,3 +76,5 @@ module.exports = (passport, callbackURL) => {
     )
   );
 };
+
+export default useGithubStrategy;

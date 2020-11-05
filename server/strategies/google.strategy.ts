@@ -1,5 +1,5 @@
-const GoogleStrategy = require('passport-google-oauth20').Strategy;
-const pool = require('../modules/pool');
+import { Strategy as GoogleStrategy } from 'passport-google-oauth20';
+import pool from '../modules/pool';
 
 // WHAT HAPPENS AFTER GOOGLE HAS CONFIRMED THE USER
 const googleStrategyCallback = async (
@@ -66,7 +66,7 @@ const googleStrategyCallback = async (
   }
 };
 
-module.exports = (passport, callbackURL) => {
+const useGoogleStrategy = (passport, callbackURL) => {
   passport.use(
     new GoogleStrategy(
       {
@@ -78,3 +78,5 @@ module.exports = (passport, callbackURL) => {
     )
   );
 };
+
+export default useGoogleStrategy;

@@ -1,5 +1,6 @@
-const LocalStrategy = require('passport-local').Strategy;
-const encryptLib = require('../modules/encryption');
+import { Strategy as LocalStrategy } from 'passport-local';
+import * as encryptLib from '../modules/encryption';
+import pool from '../modules/pool';
 
 const localStrategyCallback = async (email, password, done) => {
   try {
@@ -25,6 +26,8 @@ const localStrategyCallback = async (email, password, done) => {
   }
 };
 
-module.exports = (passport) => {
+const useLocalStrategy = (passport) => {
   passport.use('local', new LocalStrategy(localStrategyCallback));
 };
+
+export default useLocalStrategy;

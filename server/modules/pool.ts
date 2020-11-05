@@ -3,10 +3,10 @@
  change `prime_app` to the name of your database, and you should be all set!
 */
 
-const pg = require('pg');
-const url = require('url');
+import pg from 'pg';
+import url from 'url';
 
-const ENV_CONFIG: object = process.env != null ? process.env : {};
+const ENV_CONFIG: any = process.env != null ? process.env : {};
 
 // default configuration for local development
 let config: object = {
@@ -50,4 +50,4 @@ pool.on('connect', () => {
   console.log('Pool connected');
 });
 
-module.exports = pool;
+export default pool;

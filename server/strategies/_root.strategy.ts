@@ -1,8 +1,8 @@
-const passport = require('passport');
-const pool = require('../modules/pool');
-const useLocalStrategy = require('./local.strategy');
-const useGoogleStrategy = require('./google.strategy');
-const useGithubStrategy = require('./github.strategy');
+import passport from 'passport';
+import pool from '../modules/pool';
+import useLocalStrategy from './local.strategy';
+import useGoogleStrategy from './google.strategy';
+import useGithubStrategy from './github.strategy';
 
 // STRATEGIES
 useLocalStrategy(passport);
@@ -32,4 +32,4 @@ passport.deserializeUser(async (id, done) => {
   }
 });
 
-module.exports = passport;
+export default passport;
