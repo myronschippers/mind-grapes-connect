@@ -9,12 +9,12 @@ useLocalStrategy(passport);
 useGoogleStrategy(passport, '/auth/google/callback');
 useGithubStrategy(passport, '/auth/github/callback');
 
-passport.serializeUser((user, done) => {
+passport.serializeUser((user: any, done): void => {
   console.log('serializing user: ', user);
   done(null, user.id);
 });
 
-passport.deserializeUser(async (id, done) => {
+passport.deserializeUser(async (id: number, done) => {
   try {
     const result = await pool.query('SELECT * FROM "user" WHERE id = $1;', [
       id,
