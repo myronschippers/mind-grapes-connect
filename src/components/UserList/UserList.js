@@ -9,8 +9,13 @@ import {
   ListItemSecondaryAction,
   Avatar,
 } from '@material-ui/core';
+import SentimentVeryDissatisfiedIcon from '@material-ui/icons/SentimentVeryDissatisfied';
+import SentimentDissatisfiedIcon from '@material-ui/icons/SentimentDissatisfied';
+import SentimentSatisfiedIcon from '@material-ui/icons/SentimentSatisfied';
+import SentimentVerySatisfiedIcon from '@material-ui/icons/SentimentVerySatisfied';
 
 function UserList(props) {
+  const [selectedUsers, setSelectedUsers] = useState([]);
   const [usersList, setUsersList] = useState([
     {
       id: 1,
@@ -32,7 +37,28 @@ function UserList(props) {
     },
   ]);
 
-  handleUserToggle = () => (event) => {};
+  const handleUserToggle = (userInfo) => (event) => {
+    let checkedUsers = [...selectedUsers, event.target.value];
+
+    if (selectedUsers.indexOf(event.target.value) !== -1) {
+      checkedUsers = selectedUsers.filter((indvUserId) => {
+        return indvUserId !== event.target.value;
+      });
+    }
+  };
+
+  function renderStatus(userInfo) {
+    switch (userInfo.status) {
+      case 'active':
+        return <SentimentVerySatisfiedIcon />;
+      case 'removed':
+        return <SentimentVeryDissatisfiedIcon />;
+      case 'pending':
+        return <SentimentDissatisfiedIcon />;
+      default:
+        return <SentimentSatisfiedIcon />;
+    }
+  }
 
   return (
     <List>
@@ -44,6 +70,7 @@ function UserList(props) {
                 alt={`User - ${user.name}`}
                 src={`/images/avatar_generic.jpg`}
               />
+              {renderStatus(user)}
             </ListItemAvatar>
             <ListItemText
               id={labelId}
@@ -53,8 +80,8 @@ function UserList(props) {
               <Checkbox
                 edge="end"
                 value={user.id}
-                onChange={handleToggle(user)}
-                checked={user.id !== -1}
+                onChange={handleUserToggle(user)}
+                checked={selectedUsers.indexOf(user.id) !== -1}
                 inputProps={{ 'aria-labelledby': labelId }}
               />
             </ListItemSecondaryAction>
